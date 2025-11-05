@@ -3,62 +3,120 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site Interativo sobre o Povo Kawaiwete</title>
+  <title>Quiz sobre a Amazônia e o Norte</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>Quiz Interativo</h1>
-    <p>Sabe bem sobre a Amazônia e a região Norte do Brasil?</p>
+    <p>Você sabe bem sobre a Amazônia e a região Norte do Brasil? Teste seus conhecimentos!</p>
   </header>
 
   <main>
     <section id="quiz-section">
       <div id="quiz-container" class="card">
-        <h2 id="quiz-question">2/8: Segundo a lenda de Kupeirup, o que aconteceu com suas cinzas após ela ser queimada na roça?</h2>
         <form id="quiz-form">
-          <label><input type="radio" name="answer" value="vento"> Foram levadas pelo vento.</label><br>
-          <label><input type="radio" name="answer" value="rio"> Deram origem a um rio.</label><br>
-          <label><input type="radio" name="answer" value="agricolas"> Se transformaram em produtos agrícolas.</label><br>
-          <label><input type="radio" name="answer" value="floresta"> Viraram uma floresta.</label><br>
-          <button type="button" id="responder">Responder</button>
+
+          <h2>1/15: Qual é o maior estado da Região Norte?</h2>
+          <label><input type="radio" name="q1" value="Pará"> Pará</label><br>
+          <label><input type="radio" name="q1" value="Amazonas"> Amazonas</label><br>
+          <label><input type="radio" name="q1" value="Acre"> Acre</label><br>
+          <label><input type="radio" name="q1" value="Rondônia"> Rondônia</label><br><br>
+
+          <h2>2/15: Qual é o principal rio da Amazônia?</h2>
+          <label><input type="radio" name="q2" value="Tapajós"> Rio Tapajós</label><br>
+          <label><input type="radio" name="q2" value="Amazonas"> Rio Amazonas</label><br>
+          <label><input type="radio" name="q2" value="Madeira"> Rio Madeira</label><br>
+          <label><input type="radio" name="q2" value="Negro"> Rio Negro</label><br><br>
+
+          <h2>3/15: Segundo a lenda do Boto-Cor-de-Rosa, o que acontece quando ele sai da água?</h2>
+          <label><input type="radio" name="q3" value="criança"> Vira uma criança que engana casais.</label><br>
+          <label><input type="radio" name="q3" value="encanta"> Vira um homem que encanta as mulheres e as engravida, depois indo embora.</label><br>
+          <label><input type="radio" name="q3" value="pescador"> Se transforma em um pescador.</label><br>
+          <label><input type="radio" name="q3" value="monstro"> Vira um monstro que come humanos.</label><br><br>
+
+          <h2>4/15: Qual bioma predomina na região Norte?</h2>
+          <label><input type="radio" name="q4" value="Cerrado"> Cerrado</label><br>
+          <label><input type="radio" name="q4" value="Mata Atlântica"> Mata Atlântica</label><br>
+          <label><input type="radio" name="q4" value="Amazônia"> Amazônia</label><br>
+          <label><input type="radio" name="q4" value="Caatinga"> Caatinga</label><br><br>
+
+          <h2>5/15: O que é o Encontro das Águas?</h2>
+          <label><input type="radio" name="q5" value="rios"> União do Rio Negro e Solimões.</label><br>
+          <label><input type="radio" name="q5" value="festa"> Uma festa folclórica.</label><br>
+          <label><input type="radio" name="q5" value="bairro"> O nome de um bairro em Manaus.</label><br>
+          <label><input type="radio" name="q5" value="mito"> Um mito indígena.</label><br><br>
+
+          <h2>6/15: Qual cidade é conhecida como a “Paris dos Trópicos”?</h2>
+          <label><input type="radio" name="q6" value="Manaus"> Manaus</label><br>
+          <label><input type="radio" name="q6" value="Belém"> Belém</label><br>
+          <label><input type="radio" name="q6" value="Boa Vista"> Boa Vista</label><br>
+          <label><input type="radio" name="q6" value="Macapá"> Macapá</label><br><br>
+
+          <h2>7/15: O açaí nasce em qual tipo de planta?</h2>
+          <label><input type="radio" name="q7" value="arvore"> Árvore de grande porte</label><br>
+          <label><input type="radio" name="q7" value="palmeira"> Palmeira</label><br>
+          <label><input type="radio" name="q7" value="arbusto"> Arbusto</label><br>
+          <label><input type="radio" name="q7" value="trepadeira"> Trepadeira</label><br><br>
+
+          <h2>8/15: Qual é a capital do Acre?</h2>
+          <label><input type="radio" name="q8" value="Porto Velho"> Porto Velho</label><br>
+          <label><input type="radio" name="q8" value="Rio Branco"> Rio Branco</label><br>
+          <label><input type="radio" name="q8" value="Cruzeiro do Sul"> Cruzeiro do Sul</label><br>
+          <label><input type="radio" name="q8" value="Manaus"> Manaus</label><br><br>
+
+          <h2>9/15: Principal produto extrativista da Amazônia?</h2>
+          <label><input type="radio" name="q9" value="Petróleo"> Petróleo</label><br>
+          <label><input type="radio" name="q9" value="Borracha"> Borracha</label><br>
+          <label><input type="radio" name="q9" value="Café"> Café</label><br>
+          <label><input type="radio" name="q9" value="Algodão"> Algodão</label><br><br>
+
+          <h2>10/15: Em qual estado fica o Monte Roraima?</h2>
+          <label><input type="radio" name="q10" value="Amazonas"> Amazonas</label><br>
+          <label><input type="radio" name="q10" value="Roraima"> Roraima</label><br>
+          <label><input type="radio" name="q10" value="Acre"> Acre</label><br>
+          <label><input type="radio" name="q10" value="Pará"> Pará</label><br><br>
+
+          <h2>11/15: Qual animal é símbolo da Amazônia?</h2>
+          <label><input type="radio" name="q11" value="Onça-pintada"> Onça-pintada</label><br>
+          <label><input type="radio" name="q11" value="Capivara"> Capivara</label><br>
+          <label><input type="radio" name="q11" value="Tamanduá"> Tamanduá</label><br>
+          <label><input type="radio" name="q11" value="Tatu"> Tatu</label><br><br>
+
+          <h2>12/15: Qual país faz fronteira com a região Norte?</h2>
+          <label><input type="radio" name="q12" value="Uruguai"> Uruguai</label><br>
+          <label><input type="radio" name="q12" value="Venezuela"> Venezuela</label><br>
+          <label><input type="radio" name="q12" value="Argentina"> Argentina</label><br>
+          <label><input type="radio" name="q12" value="Chile"> Chile</label><br><br>
+
+          <h2>13/15: O que é o Curupira?</h2>
+          <label><input type="radio" name="q13" value="floresta"> Um ser que protege a floresta e tem os pés virados para trás.</label><br>
+          <label><input type="radio" name="q13" value="pescador"> Um pescador encantado.</label><br>
+          <label><input type="radio" name="q13" value="espirito"> Um espírito das águas.</label><br>
+          <label><input type="radio" name="q13" value="índio"> Um índio guerreiro.</label><br><br>
+
+          <h2>14/15: Qual cidade abriga o Teatro Amazonas?</h2>
+          <label><input type="radio" name="q14" value="Manaus"> Manaus</label><br>
+          <label><input type="radio" name="q14" value="Belém"> Belém</label><br>
+          <label><input type="radio" name="q14" value="Boa Vista"> Boa Vista</label><br>
+          <label><input type="radio" name="q14" value="Santarém"> Santarém</label><br><br>
+
+          <h2>15/15: Qual é o principal clima da região Norte?</h2>
+          <label><input type="radio" name="q15" value="Semiárido"> Semiárido</label><br>
+          <label><input type="radio" name="q15" value="Equatorial úmido"> Equatorial úmido</label><br>
+          <label><input type="radio" name="q15" value="Tropical"> Tropical</label><br>
+          <label><input type="radio" name="q15" value="Subtropical"> Subtropical</label><br><br>
+
+          <button type="button" id="enviar">Enviar Respostas</button>
         </form>
-        <p id="quiz-feedback"></p>
+
+        <p id="resultado"></p>
       </div>
-    </section>
-
-    <section id="comentarios-section">
-      <h2>Comentários e Perguntas</h2>
-      <p>Deixe sua mensagem, dúvida ou contribuição sobre o povo Kawaiwete!</p>
-      <form id="comment-form">
-        <label for="nome">Seu Nome:</label><br>
-        <input type="text" id="nome" required><br>
-
-        <label for="mensagem">Seu Comentário ou Pergunta:</label><br>
-        <textarea id="mensagem" rows="3" required></textarea><br>
-
-        <button type="submit">Enviar Comentário</button>
-      </form>
-
-      <h3>Comentários Anteriores</h3>
-      <div id="comentarios"></div>
     </section>
   </main>
 
   <footer>
-    <p><strong>Desenvolvido por:</strong> Heitor Sales e Luiz Miguel Rodrigues.<br>
-      <strong>Grupo:</strong> Heitor e Luiz Miguel.<br>
-      <strong>Turma:</strong> 7ºB.<br>
-      <strong>Matéria:</strong> História.</p>
-    <p><strong>Trabalho Completo:</strong> <a href="#">Link para o Canva</a></p>
-
-    <h4>Fontes:</h4>
-    <ul>
-      <li>Socioambiental – Kaiabi/Kawaiwete</li>
-      <li>Notícias sobre roças tradicionais dos Kawaiwete</li>
-      <li>Wikipedia – Caiabis</li>
-      <li>Dicionário Kayabi (Weiss, 2005)</li>
-    </ul>
+    <p><strong>Desenvolvido por:</strong> Heitor Sales e Luiz Miguel Rodrigues — 7ºB</p>
   </footer>
 
   <script src="script.js"></script>
