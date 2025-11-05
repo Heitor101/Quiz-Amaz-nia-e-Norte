@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Interativo sobre o Povo Kawaiwete</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Quiz Interativo</h1>
+    <p>Sabe bem sobre a Amazônia e a região Norte do Brasil?</p>
+  </header>
+
+  <main>
+    <section id="quiz-section">
+      <div id="quiz-container" class="card">
+        <h2 id="quiz-question">2/8: Segundo a lenda de Kupeirup, o que aconteceu com suas cinzas após ela ser queimada na roça?</h2>
+        <form id="quiz-form">
+          <label><input type="radio" name="answer" value="vento"> Foram levadas pelo vento.</label><br>
+          <label><input type="radio" name="answer" value="rio"> Deram origem a um rio.</label><br>
+          <label><input type="radio" name="answer" value="agricolas"> Se transformaram em produtos agrícolas.</label><br>
+          <label><input type="radio" name="answer" value="floresta"> Viraram uma floresta.</label><br>
+          <button type="button" id="responder">Responder</button>
+        </form>
+        <p id="quiz-feedback"></p>
+      </div>
+    </section>
+
+    <section id="comentarios-section">
+      <h2>Comentários e Perguntas</h2>
+      <p>Deixe sua mensagem, dúvida ou contribuição sobre o povo Kawaiwete!</p>
+      <form id="comment-form">
+        <label for="nome">Seu Nome:</label><br>
+        <input type="text" id="nome" required><br>
+
+        <label for="mensagem">Seu Comentário ou Pergunta:</label><br>
+        <textarea id="mensagem" rows="3" required></textarea><br>
+
+        <button type="submit">Enviar Comentário</button>
+      </form>
+
+      <h3>Comentários Anteriores</h3>
+      <div id="comentarios"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Desenvolvido por:</strong> Heitor Sales e Luiz Miguel Rodrigues.<br>
+      <strong>Grupo:</strong> Heitor e Luiz Miguel.<br>
+      <strong>Turma:</strong> 7ºB.<br>
+      <strong>Matéria:</strong> História.</p>
+    <p><strong>Trabalho Completo:</strong> <a href="#">Link para o Canva</a></p>
+
+    <h4>Fontes:</h4>
+    <ul>
+      <li>Socioambiental – Kaiabi/Kawaiwete</li>
+      <li>Notícias sobre roças tradicionais dos Kawaiwete</li>
+      <li>Wikipedia – Caiabis</li>
+      <li>Dicionário Kayabi (Weiss, 2005)</li>
+    </ul>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
