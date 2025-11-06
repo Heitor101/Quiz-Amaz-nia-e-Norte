@@ -1,124 +1,401 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz sobre a Amazônia e o Norte</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz sobre o Norte do Brasil e a Amazônia</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Estilos Gerais */
+    body {
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        line-height: 1.7;
+        color: #444;
+        margin: 0;
+        padding: 0;
+        background-color: #edf5ef; /* Fundo Tema Verde */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    /* Container principal (Centralizado) */
+    main {
+        flex: 1;
+        padding: 30px 20px;
+    }
+
+    /* Títulos (Tema Verde) */
+    h1, h2, h3 {
+        color: #2c3e50; 
+        text-align: center;
+        margin-bottom: 25px;
+        font-weight: 600;
+    }
+    h1 {
+        font-size: 2.8em;
+        color: #2e8b57; /* Tema Verde */
+        padding-bottom: 15px;
+        border-bottom: 3px solid #2e8b57; /* Tema Verde */
+        /* CORRIGIDO: 30px de margem no topo para criar espaço abaixo da imagem */
+        margin-top: 30px; 
+        margin-bottom: 40px;
+    }
+    h2 {
+        font-size: 2em;
+        color: #3cb371; /* Tema Verde (Claro) */
+        margin-top: 40px;
+    }
+    p {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    /* Container Principal (Card) */
+    .container-principal {
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        background-color: #fff;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 30px;
+    }
+
+    /* Estilo para a imagem de topo */
+    .banner-topo {
+    width: 900px; 
+    height: 225px;
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem */
+}
+    }
+
+    /* Seções */
+    section {
+        padding: 25px 0;
+    }
+
+    /* Botões Padronizados */
+    button {
+        display: inline-block;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        margin-right: 10px;
+        margin-top: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+    
+    /* Cores dos botões do Quiz */
+    #quiz-responder {
+        background-color: #2ecc71; /* Verde */
+        color: #fff;
+    }
+    #quiz-responder:hover {
+        background-color: #27ae60; /* Verde mais escuro */
+    }
+    #quiz-proxima {
+        background-color: #3498db; /* Azul */
+        color: #fff;
+    }
+    #quiz-proxima:hover {
+        background-color: #2980b9; /* Azul mais escuro */
+    }
+
+    /* Seção de Quiz */
+    .quiz-container {
+        max-width: 700px; /* Centralizado */
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 8px;
+    }
+    .quiz-container label {
+        display: block;
+        margin-bottom: 12px;
+        padding: 10px;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: normal;
+        transition: background-color 0.2s;
+    }
+    .quiz-container label:hover {
+        background-color: #f1f1f1;
+    }
+    .quiz-container label input {
+        margin-right: 12px;
+        accent-color: #2e8b57; /* Tema Verde */
+    }
+    #quiz-pergunta {
+        text-align: left;
+        font-size: 1.25em;
+    }
+
+    /* Feedback do Quiz */
+    .feedback-quiz {
+        margin-top: 25px;
+        padding: 15px;
+        border-radius: 5px;
+        font-weight: bold;
+        display: none;
+        text-align: center;
+    }
+    .feedback-quiz.correto {
+        background-color: #d4edda;
+        color: #155724;
+        border: 1px solid #c3e6cb;
+    }
+    .feedback-quiz.incorreto {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+    }
+    #quiz-proxima { margin-top: 15px; }
+
+    /* Rodapé */
+    footer {
+        text-align: center;
+        margin-top: 60px;
+        padding: 25px;
+        background-color: #1a3824; /* Fundo Tema Verde */
+        color: #ecf0f1;
+        border-top: 5px solid #2e8b57; /* Tema Verde */
+    }
+    footer p {
+        margin: 8px 0;
+        color: #ecf0f1;
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <h1>Quiz Interativo</h1>
-    <p>Você sabe bem sobre a Amazônia e a região Norte do Brasil? Teste seus conhecimentos!</p>
-  </header>
 
-  <main>
-    <section id="quiz-section">
-      <div id="quiz-container" class="card">
-        <form id="quiz-form">
+  <main>
+    <div class="container-principal">
+        <img class="banner-topo" src="image_51234b.png" alt="Imagem temática da Amazônia"/>
 
-          <h2>1/15: Qual é o maior estado da Região Norte?</h2>
-          <label><input type="radio" name="q1" value="Pará"> Pará</label><br>
-          <label><input type="radio" name="q1" value="Amazonas"> Amazonas</label><br>
-          <label><input type="radio" name="q1" value="Acre"> Acre</label><br>
-          <label><input type="radio" name="q1" value="Rondônia"> Rondônia</label><br><br>
+        <h1>Quiz Interativo: Região Norte</h1>
+        <p>Teste seus conhecimentos sobre a Amazônia e a região Norte do Brasil.</p>
 
-          <h2>2/15: Qual é o principal rio da Amazônia?</h2>
-          <label><input type="radio" name="q2" value="Tapajós"> Rio Tapajós</label><br>
-          <label><input type="radio" name="q2" value="Amazonas"> Rio Amazonas</label><br>
-          <label><input type="radio" name="q2" value="Madeira"> Rio Madeira</label><br>
-          <label><input type="radio" name="q2" value="Negro"> Rio Negro</label><br><br>
+        <section id="quiz-section">
+            <h2>Quiz</h2>
+            <div class="quiz-container">
+                <div id="quiz-pergunta">Carregando pergunta...</div>
+                <div id="quiz-opcoes">
+                    </div>
+                <button id="quiz-responder">Responder</button>
+                <div id="quiz-feedback" class="feedback-quiz"></div>
+                <button id="quiz-proxima" style="display: none;">Próxima Pergunta</button>
+            </div>
+        </section>
+        
+        </div>
+  </main>
 
-          <h2>3/15: Segundo a lenda do Boto-Cor-de-Rosa, o que acontece quando ele sai da água?</h2>
-          <label><input type="radio" name="q3" value="criança"> Vira uma criança que engana casais.</label><br>
-          <label><input type="radio" name="q3" value="encanta"> Vira um homem que encanta as mulheres e as engravida, depois indo embora.</label><br>
-          <label><input type="radio" name="q3" value="pescador"> Se transforma em um pescador.</label><br>
-          <label><input type="radio" name="q3" value="monstro"> Vira um monstro que come humanos.</label><br><br>
+  <footer>
+    <p><strong>Desenvolvido por:</strong> Heitor Sales e Luiz Miguel Rodrigues.</p>
+    
+    <p><strong>Mostra Cultural Colégio Universo</strong></p>
+    <p><strong>Grupo:</strong> Heitor e Luiz Miguel.</p>
+    <p><strong>Turma:</strong> 7ºB.</p>
+  </footer>
 
-          <h2>4/15: Qual bioma predomina na região Norte?</h2>
-          <label><input type="radio" name="q4" value="Cerrado"> Cerrado</label><br>
-          <label><input type="radio" name="q4" value="Mata Atlântica"> Mata Atlântica</label><br>
-          <label><input type="radio" name="q4" value="Amazônia"> Amazônia</label><br>
-          <label><input type="radio" name="q4" value="Caatinga"> Caatinga</label><br><br>
+    <script>
+    // ===========================================
+    // === 1. CONFIGURAÇÃO E DADOS DO QUIZ ===
+    // ===========================================
+    const quizPerguntas = [
+        { pergunta: "Qual é esta região do Brasil, cuja maior parte é coberta pela Floresta Amazônica?", 
+          opcoes: ["Nordeste", "Norte", "Noroeste", "Centro-Oeste"], 
+          resposta: "Norte" 
+        },
+        { pergunta: "Qual o maior estado (em área) do Brasil, localizado na Região Norte?", 
+          opcoes: ["Pará", "Amazonas", "Mato Grosso", "Acre"], 
+          resposta: "Amazonas" 
+        },
+        { pergunta: "Qual destes estados NÃO faz parte da Região Norte?", 
+          opcoes: ["Amapá", "Roraima", "Maranhão", "Rondônia"], 
+          resposta: "Maranhão" 
+        },
+        { pergunta: "Qual é o principal rio que atravessa a Região Norte e o maior do mundo em volume de água?", 
+          opcoes: ["Rio São Francisco", "Rio Negro", "Rio Amazonas", "Rio Solimões"], 
+          resposta: "Rio Amazonas" 
+        },
+        { pergunta: "O 'Encontro das Águas' (Rio Negro e Solimões) é um famoso fenômeno que ocorre perto de qual capital?", 
+          opcoes: ["Belém", "Manaus", "Porto Velho", "Rio Branco"], 
+          resposta: "Manaus" 
+        },
+        { pergunta: "Qual bioma predomina na Região Norte?", 
+          opcoes: ["Cerrado", "Caatinga", "Mata Atlântica", "Floresta Amazônica"], 
+          resposta: "Floresta Amazônica" 
+        },
+        { pergunta: "Que cobra gigante nativa dos rios da Amazônia é considerada uma das maiores do mundo?", 
+          opcoes: ["Píton", "Cascavel", "Sucuri", "Jararáca Gigante"], 
+          resposta: "Sucuri" 
+        },
+        { pergunta: "O 'Círio de Nazaré', uma das maiores procissões religiosas do mundo, ocorre anualmente em qual capital?", 
+          opcoes: ["Belém (PA)", "Manaus (AM)", "Macapá (AP)", "Palmas (TO)"], 
+          resposta: "Belém (PA)" 
+        },
+        { pergunta: "Qual famoso Teatro de Ópera, símbolo da riqueza do ciclo da borracha, está localizado em Manaus?", 
+          opcoes: ["Teatro da Paz", "Teatro Municipal (RJ)", "Teatro Amazonas", "Teatro Guaíra"], 
+          resposta: "Teatro Amazonas" 
+        },
+        { pergunta: "O Mercado Ver-o-Peso, conhecido por seus produtos regionais como peixes e açaí, fica em qual cidade?", 
+          opcoes: ["Santarém", "Rio Branco", "Belém", "Boa Vista"], 
+          resposta: "Belém" 
+        },
+        { pergunta: "Qual fruta, típica da região, é a base de uma bebida roxa muito consumida no Brasil?", 
+          opcoes: ["Cupuaçu", "Açaí", "Graviola", "Bacuri"], 
+          resposta: "Açaí" 
+        },
+        { pergunta: "A 'Zona Franca' é um importante polo industrial e de comércio localizado em qual capital?", 
+          opcoes: ["Manaus", "Belém", "Palmas", "Macapá"], 
+          resposta: "Manaus" 
+        },
+        { pergunta: "Qual é o pico mais alto do Brasil, localizado no estado do Amazonas, perto da fronteira com a Venezuela?", 
+          opcoes: ["Pico da Bandeira", "Monte Roraima", "Pico da Neblina", "Pico 31 de Março"], 
+          resposta: "Pico da Neblina" 
+        },
+        { pergunta: "Qual é o nome do arquipélago fluvial (de rio) com centenas de ilhas localizado no Rio Negro (AM)?", 
+          opcoes: ["Fernando de Noronha", "Ilha de Marajó", "Anavilhanas", "Ilha do Bananal"], 
+          resposta: "Anavilhanas" 
+        },
+        { pergunta: "Qual estado da Região Norte, que faz fronteira com a Guiana Francesa, tem sua capital cortada pela linha do Equador?", 
+          opcoes: ["Roraima", "Pará", "Amazonas", "Amapá"], 
+          resposta: "Amapá" 
+        },
+    ];
 
-          <h2>5/15: O que é o Encontro das Águas?</h2>
-          <label><input type="radio" name="q5" value="rios"> União do Rio Negro e Solimões.</label><br>
-          <label><input type="radio" name="q5" value="festa"> Uma festa folclórica.</label><br>
-          <label><input type="radio" name="q5" value="bairro"> O nome de um bairro em Manaus.</label><br>
-          <label><input type="radio" name="q5" value="mito"> Um mito indígena.</label><br><br>
+    // ===========================================
+    // === 2. MÓDULO DO QUIZ (Lógica completa) ===
+    // ===========================================
+    const quizModule = (function() {
+        let perguntaAtual = 0;
+        let pontuacao = 0;
+        
+        function renderizarPergunta() {
+            const qp = document.getElementById('quiz-pergunta'); 
+            const qo = document.getElementById('quiz-opcoes'); 
+            const btnResp = document.getElementById('quiz-responder'); 
+            const btnNext = document.getElementById('quiz-proxima'); 
+            const feedback = document.getElementById('quiz-feedback');
 
-          <h2>6/15: Qual cidade é conhecida como a “Paris dos Trópicos”?</h2>
-          <label><input type="radio" name="q6" value="Manaus"> Manaus</label><br>
-          <label><input type="radio" name="q6" value="Belém"> Belém</label><br>
-          <label><input type="radio" name="q6" value="Boa Vista"> Boa Vista</label><br>
-          <label><input type="radio" name="q6" value="Macapá"> Macapá</label><br><br>
+            if (!qp || !qo || !btnResp || !btnNext || !feedback) { return; }
 
-          <h2>7/15: O açaí nasce em qual tipo de planta?</h2>
-          <label><input type="radio" name="q7" value="arvore"> Árvore de grande porte</label><br>
-          <label><input type="radio" name="q7" value="palmeira"> Palmeira</label><br>
-          <label><input type="radio" name="q7" value="arbusto"> Arbusto</label><br>
-          <label><input type="radio" name="q7" value="trepadeira"> Trepadeira</label><br><br>
+            qo.innerHTML = ''; 
+            feedback.style.display = 'none';
+            feedback.className = 'feedback-quiz';
 
-          <h2>8/15: Qual é a capital do Acre?</h2>
-          <label><input type="radio" name="q8" value="Porto Velho"> Porto Velho</label><br>
-          <label><input type="radio" name="q8" value="Rio Branco"> Rio Branco</label><br>
-          <label><input type="radio" name="q8" value="Cruzeiro do Sul"> Cruzeiro do Sul</label><br>
-          <label><input type="radio" name="q8" value="Manaus"> Manaus</label><br><br>
+            if (perguntaAtual < quizPerguntas.length) {
+                const questao = quizPerguntas[perguntaAtual];
+                qp.innerHTML = `<strong>${perguntaAtual + 1}/${quizPerguntas.length}:</strong> ${questao.pergunta}`; 
+                
+                const opcoesEmbaralhadas = [...questao.opcoes].sort(() => Math.random() - 0.5);
 
-          <h2>9/15: Principal produto extrativista da Amazônia?</h2>
-          <label><input type="radio" name="q9" value="Petróleo"> Petróleo</label><br>
-          <label><input type="radio" name="q9" value="Borracha"> Borracha</label><br>
-          <label><input type="radio" name="q9" value="Café"> Café</label><br>
-          <label><input type="radio" name="q9" value="Algodão"> Algodão</label><br><br>
+                opcoesEmbaralhadas.forEach(opcao => {
+                    const label = document.createElement('label');
+                    label.innerHTML = `<input type="radio" name="resposta-quiz" value="${opcao}"> ${opcao}`;
+                    qo.appendChild(label); 
+                });
+                
+                btnResp.style.display = 'inline-block';
+                btnNext.style.display = 'none';
+            } else {
+                qp.textContent = `🎉 Quiz finalizado! Sua pontuação: ${pontuacao} de ${quizPerguntas.length} corretas.`;
+                btnResp.style.display = 'none';
+                btnNext.style.display = 'inline-block';
+                btnNext.textContent = "Refazer Quiz";
+                perguntaAtual = -1; 
+                pontuacao = 0; 
+            }
+             qo.querySelectorAll('input[type="radio"]').forEach(radio => radio.disabled = false);
+        }
 
-          <h2>10/15: Em qual estado fica o Monte Roraima?</h2>
-          <label><input type="radio" name="q10" value="Amazonas"> Amazonas</label><br>
-          <label><input type="radio" name="q10" value="Roraima"> Roraima</label><br>
-          <label><input type="radio" name="q10" value="Acre"> Acre</label><br>
-          <label><input type="radio" name="q10" value="Pará"> Pará</label><br><br>
+        function responderQuiz() {
+            const sel = document.querySelector('input[name="resposta-quiz"]:checked');
+            const feedback = document.getElementById('quiz-feedback');
+            
+            if (!sel) {
+                feedback.textContent = "Por favor, selecione uma alternativa!";
+                feedback.className = 'feedback-quiz incorreto'; 
+                feedback.style.display = 'block';
+                return;
+            }
+            
+            const correta = quizPerguntas[perguntaAtual].resposta;
+            const btnResp = document.getElementById('quiz-responder');
+            const btnNext = document.getElementById('quiz-proxima');
+            
+            if (sel.value === correta) {
+                feedback.textContent = `✅ Correto! A resposta é: ${correta}`;
+                feedback.className = 'feedback-quiz correto';
+                pontuacao++; 
+            } else {
+                feedback.textContent = `❌ Incorreto. A resposta certa era: ${correta}`;
+                feedback.className = 'feedback-quiz incorreto';
+            }
+            
+            feedback.style.display = 'block';
+            btnResp.style.display = 'none';
+            btnNext.style.display = 'inline-block';
 
-          <h2>11/15: Qual animal é símbolo da Amazônia?</h2>
-          <label><input type="radio" name="q11" value="Onça-pintada"> Onça-pintada</label><br>
-          <label><input type="radio" name="q11" value="Capivara"> Capivara</label><br>
-          <label><input type="radio" name="q11" value="Tamanduá"> Tamanduá</label><br>
-          <label><input type="radio" name="q11" value="Tatu"> Tatu</label><br><br>
+            document.querySelectorAll('input[type="radio"]').forEach(radio => radio.disabled = true);
+        }
 
-          <h2>12/15: Qual país faz fronteira com a região Norte?</h2>
-          <label><input type="radio" name="q12" value="Uruguai"> Uruguai</label><br>
-          <label><input type="radio" name="q12" value="Venezuela"> Venezuela</label><br>
-          <label><input type="radio" name="q12" value="Argentina"> Argentina</label><br>
-          <label><input type="radio" name="q12" value="Chile"> Chile</label><br><br>
+        function proximaPergunta() {
+            if (perguntaAtual === -1) { 
+                perguntaAtual = 0; 
+            } else {
+                perguntaAtual++;
+            }
+            renderizarPergunta();
+        }
 
-          <h2>13/15: O que é o Curupira?</h2>
-          <label><input type="radio" name="q13" value="floresta"> Um ser que protege a floresta e tem os pés virados para trás.</label><br>
-          <label><input type="radio" name="q13" value="pescador"> Um pescador encantado.</label><br>
-          <label><input type="radio" name="q13" value="espirito"> Um espírito das águas.</label><br>
-          <label><input type="radio" name="q13" value="índio"> Um índio guerreiro.</label><br><br>
+        function init() {
+            const btnResp = document.getElementById('quiz-responder');
+            const btnNext = document.getElementById('quiz-proxima');
+            
+            if (btnResp) btnResp.addEventListener('click', responderQuiz);
+            if (btnNext) btnNext.addEventListener('click', proximaPergunta);
 
-          <h2>14/15: Qual cidade abriga o Teatro Amazonas?</h2>
-          <label><input type="radio" name="q14" value="Manaus"> Manaus</label><br>
-          <label><input type="radio" name="q14" value="Belém"> Belém</label><br>
-          <label><input type="radio" name="q14" value="Boa Vista"> Boa Vista</label><br>
-          <label><input type="radio" name="q14" value="Santarém"> Santarém</label><br><br>
+          
+            renderizarPergunta(); 
+        }
+        
+        return { init };
+    })();
 
-          <h2>15/15: Qual é o principal clima da região Norte?</h2>
-          <label><input type="radio" name="q15" value="Semiárido"> Semiárido</label><br>
-          <label><input type="radio" name="q15" value="Equatorial úmido"> Equatorial úmido</label><br>
-          <label><input type="radio" name="q15" value="Tropical"> Tropical</label><br>
-          <label><input type="radio" name="q15" value="Subtropical"> Subtropical</label><br><br>
+    // ===========================================
+    // === 3. INICIALIZAÇÃO ===
+    // ===========================================
 
-          <button type="button" id="enviar">Enviar Respostas</button>
-        </form>
-
-        <p id="resultado"></p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p><strong>Desenvolvido por:</strong> Heitor Sales e Luiz Miguel Rodrigues — 7ºB</p>
-  </footer>
-
-  <script src="script.js"></script>
+    document.addEventListener("DOMContentLoaded", () => {
+        
+        // INICIA O MÓDULO DO QUIZ
+        quizModule.init();
+        
+    });
+  </script>
 </body>
+
 </html>
+
+
+
